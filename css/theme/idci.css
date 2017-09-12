@@ -56,7 +56,6 @@ body {
 .reveal h5,
 .reveal h6 {
     margin: 0 0 20px 0;
-    color: #1E9847;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     font-weight: 600;
     line-height: 1.2;
@@ -78,9 +77,14 @@ body {
 
 .reveal h3 {
     font-size: 1em;
+    color: #1E9847;
 }
 
-.reveal h4,
+.reveal h4 {
+    font-size: 1em;
+    color: #0DB0D1;
+}
+
 .reveal h5,
 .reveal h6 {
     font-size: 1em;
