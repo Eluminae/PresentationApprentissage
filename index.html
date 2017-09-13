@@ -41,13 +41,21 @@
             <div class="slides">
                 <section>
                     <section>
-                        <h2>Soutenance METINET</h2>
+                        <div class="flex-logo">
+                            <div>
+                                <img class="logo" width="300em" data-src="images/logo_iut.jpg" alt="Logo IUT Lyon 1" />
+                            </div>
+                            <div>
+                                <img class="logo" width="300em" data-src="images/logo_idci.svg" alt="Logo IDCI Consulting" />
+                            </div>
+                        </div>
+                        <h2>Soutenance de fin de formation</h2>
                         <em class="presented-by">présentée par <a href="https://www.idci-consulting.fr/en/cv/idci/eddie_barraco" target="_blank">Eddie Barraco</a></em>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>Licence professionnelle</h2>
+                        <h2>Licence professionnelle METINET</h2>
                     </section>
                     <section>
                         <h3>Les cours METINET</h3>
@@ -64,7 +72,7 @@
                             <li>Expertise du développement web sur mesure</li>
                             <li>5 collaborateurs</li>
                             <li>Basée à Villeurbanne</li>
-                            <li>10 ans d'expérience</li>
+                            <li>10 ans d'expériences</li>
                         </ul>
                     </section>
                 </section>
@@ -93,7 +101,7 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>Un besoin de faire évoluer le SI</h3>
+                        <h3>Besoin de faire évoluer le SI</h3>
                         <ul>
                             <li>Suivi difficile</li>
                             <li>Comptabilité périlleuse</li>
@@ -131,7 +139,7 @@
                         <h3>État actuel du projet</h3>
                         <ul>
                             <li>Devis validé et contrats signés</li>
-                            <li>Début des développements en octobre</li>
+                            <li>Début des développements cette semaine</li>
                         </ul>
                     </section>
                 </section>
@@ -143,16 +151,15 @@
                         <h3>Notre gestion des emplois du temps</h3>
                         <ul>
                             <li>Google Calendar</li>
-                            <li>Un calendrier par collaborateur</li>
+                            <li>Un calendrier par développeur</li>
                             <li>Une convention de notation ( Projet [LIEU] )</li>
                         </ul>
                     </section>
                     <section>
                         <h3>Besoin d'un suivi global</h3>
                         <ul>
-                            <li>Vue rapide sur les disponibilités entre deux dates</li>
-                            <li>Calculer les ressources allouées par projet</li>
-                            <li>Simplifier le calcul de nos vacances</li>
+                            <li>Vue rapide des disponnibilités pour de nouveaux projets</li>
+                            <li>Simplification de la facturations aux différents clients</li>
                         </ul>
                     </section>
                     <section>
@@ -166,12 +173,81 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>Une application intéractive</h3>
+                        <h3>Le fonctionnement d'une application ReactJs</h3>
+                        <div class="pres-flex">
+                            <pre><code class="hljs javascript">
+constructor() {
+  this.state = {
+    formFirstName: "",
+    students: [],
+  }
+}
+
+handleAddStudent(event) {
+  let student = new Student(
+    this.state.formFirstName,
+  );
+
+  this.setState({
+    students: this.state.students.concat([student]),
+    formFirstName: "",
+  });
+}
+
+handleChangeFormFirstName(event) {
+  this.setState({
+    formFirstName: event.target.value
+  });
+}
+
+render() {
+  return (
+    <div className="App">
+      <div>
+        <h1>Add a student</h1>
+        <form onSubmit={this.handleAddStudent}>
+          <label>
+            First Name:
+            <input type="text" value={this.state.formFirstName} onChange={this.handleChangeFormFirstName} />
+          </label>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <h1>Student list</h1>
+      <ul>
+        {
+          this.state.students.map((student) => {
+            return (
+              <li>
+                {student.firstName}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  );
+}
+                        </code></pre>
+                        <iframe data-src="http://localhost:3001"></iframe>
+                    </div>
+                    </section>
+                    <section>
+                        <h3>L'architecture MVVM</h3>
                         <img data-src="images/schemas/MVVM.png" alt="MVVM Schemas" />
                     </section>
                     <section>
+                        <h3>Les avantages</h3>
+                        <ul>
+                            <li>Faible couplage entre vue et vueModele</li>
+                            <li>Permet de tester séparément les éléments</li>
+                            <li>Le code des modeles et vueModeles est réutilisable dans d'autres frameworks mvvm</li>
+                        </ul>
+                    </section>
+                    <section>
                         <h3>Application actuelle</h3>
-                        <iframe height="500px" width="500px" src="https://calendar-tool.idci-consulting.fr/"></iframe>
+                        <iframe height="500px" width="500px" data-src="http://localhost:3000/"></iframe>
                     </section>
                 </section>
                 <section>
@@ -195,22 +271,22 @@
                     <section>
                         <h3>Tessi</h3>
                         <ul>
-                            <li>Participation au projet Unica</li>
-                            <li>Développement de la partie cropping des images</li>
+                            <li>Développement de la partie cropping des images pour le projet UNICA</li>
                         </ul>
+                        <img data-src="images/nutella-unica.jpg" alt="Nutella Unica" />
                     </section>
                     <section>
                         <h3>Upsters</h3>
                         <ul>
                             <li>Réseau social de startup</li>
-                            <li>Développement du script de cropping des images</li>
+                            <li>Mise en relation de prestataire</li>
                         </ul>
                     </section>
                     <section>
                         <h3>Interforum</h3>
                         <ul>
-                            <li>Mise en place d'un nouveau site web "Classes"</li>
-                            <li>Échanges avec le client sur différentes demandes au cours de l'année</li>
+                            <li>Application de gestion de classes par des professeur</li>
+                            <li>Mise en place d'un nouveau sous-site web "Classes"</li>
                         </ul>
                     </section>
                     <section>
@@ -218,14 +294,37 @@
                         <ul>
                             <li>Serveur SMTP</li>
                             <li>Technologies Front en javascript</li>
-                            <li>Framework Symfony</li>
+                            <li>Intégration continue</li>
                         </ul>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>Conclusion</h2>
+                        <h2>Bilan de cette année</h2>
                     </section>
+                    <section>
+                        <h3>Licence METINET</h3>
+                        <ul>
+                            <li>Connaissance globale du monde du web</li>
+                            <li>Remise en question de nombreux acquis</li>
+                            <li>Travaux en équipes sur différents projets</li>
+                            <li>Mise en situation professionnelle</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>IDCI Consulting</h3>
+                        <ul>
+                            <li>Projets variés et intéressants</li>
+                            <li>Développement de compétences</li>
+                            <li>Équipe soudée et perfectionniste</li>
+                            <li>Entrée dans le monde professionnel</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Merci pour cette année</h3>
+                    </section>
+                </section>
+                <section>
                     <section>
                         <h3>Des questions ?</h3>
                     </section>
