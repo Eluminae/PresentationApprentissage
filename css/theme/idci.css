@@ -65,7 +65,7 @@ body {
     display: flex;
 }
 
-.reveal pre {
+.reveal .left {
     max-width: 65%;
 }
 
